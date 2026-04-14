@@ -16,4 +16,14 @@ test.describe('Login Tests', ()=>{
 
         await expect(loginPage.errorMessage).toBeVisible();
     });
+
+    test('empty credentials', async ({page})=>{
+        const loginPage = new LoginPage(page);
+        await loginPage.goto();
+        await loginPage.clickLogin();
+
+
+        await expect(loginPage.errorMessage).toBeVisible();
+        await expect(loginPage.errorMessage).toContainText('Username is required');
+    });
 });
