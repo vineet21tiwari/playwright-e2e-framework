@@ -23,6 +23,7 @@ class LoginPage {
         await this.loginInput.click();
     }
 
+    
     async login(username,password){
         await this.enterUsername(username);
         await this.enterPassword(password);
